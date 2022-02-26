@@ -2,15 +2,43 @@ baseurl      = "https://pazyp.github.io/"
 title        = "pazikas.com"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
-paginate     = 10
 
-# Enable theme toggle
-# 
-# This options enables the theme toggle for the theme. 
-# Per default, this option is off. 
-# The theme is respecting the prefers-color-scheme of the operating systeme. 
-# With this option on, the page user is able to set the scheme he wants. 
+PygmentsCodeFences = true
+PygmentsStyle = "monokai"
+paginate  = 10
+rssLimit  = 10  # Maximum number of items in the RSS feed.
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
+
+publishDir   = "public"
+canonifyURLs = true
+enableRobotsTXT = true
+enableGitInfo   = false
+enableEmoji     = true
+enableMissingTranslationPlaceholders = false
 enableThemeToggle = true
+
+# Subtitle for home
+homeSubtitle = "A Place for things"
+
+# Set disableReadOtherPosts to true in order to hide the links to other posts.
+disableReadOtherPosts = false
+
+# Enable sharing buttons, if you like
+enableSharingButtons = true
+
+# Metadata mostly used in document's head
+description = "A blog"
+keywords = "homepage, blog"
+images = [""]
+
+[permalinks]
+  posts = "/posts/:year/:month/:title/"
+
+[author]
+  name = "Andrew Pazikas"
+
+[blackfriday]
+  hrefTargetBlank = true
 
 [params]
   dateform        = "Jan 2, 2006"
@@ -30,43 +58,34 @@ enableThemeToggle = true
   name = "github"
   url = "https://github.com/pazyp"
 
-  # Subtitle for home
-  homeSubtitle = "A Place for things"
-
-  # Set disableReadOtherPosts to true in order to hide the links to other posts.
-  disableReadOtherPosts = false
-
-  # Enable sharing buttons, if you like
-  enableSharingButtons = true
-
-  # Metadata mostly used in document's head
-  description = "A blog"
-  keywords = "homepage, blog"
-  images = [""]
-
 [taxonomies]
     category = "blog"
     tag      = "tags"
     series   = "series"
 
-[languages]
-  [languages.en]
-    title = "Andrew Pazikas"
-    subtitle = "A simple theme for Hugo"
-    keywords = ""
-    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
-    readOtherPosts = "Read other posts"
+  [params.logo]
+    logoMark     = ">"
+    logoText     = "$ cd /home/"
+    logoHomeLink = "/"
+    # Set true to remove the logo cursor entirely.
+    # logoCursorDisabled = false
+    # Set to a valid CSS color to change the cursor in the logo.
+    logoCursorColor    = "#67a2c9"
 
-    [languages.en.params.logo]
-      logoText = "cd /home/"
-      logoHomeLink = "/"
-    # or
-    #
-    # path = "/img/your-example-logo.svg"
-    # alt = "Your example logo alt text"
+
+# Custom footer 
+# If you want, you can easily override the default footer with your own content. 
+#
+[params.footer]
+  topText = []
+  bottomText = [
+    "Powered by <a href=\"http://gohugo.io\">Hugo</a>",
+    "Made with &#10084; by <a href=\"https://github.com/pazyp/pazikas.com\">Andrew Pazikas</a>"
+  ]
+
 
   # And you can even create generic menu
   [[menu.main]]
-    identifier = "blog"
+    identifier = "Blog"
     name       = "Blog"
     url        = "/posts"
